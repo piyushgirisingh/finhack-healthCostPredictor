@@ -1,78 +1,70 @@
+# 🏥 HealthCost AI Predictor
 
-🏥 HealthCost AI Predictor
+This is a Streamlit web application that predicts yearly healthcare costs based on patient demographic and medical data using a machine learning model.
 
-Welcome to HealthCost AI Predictor, a machine learning-powered web app built with Streamlit that estimates an individual's yearly healthcare cost based on simple personal and medical information.
+## 📊 Overview
 
-🚀 Features
+The app:
+- Loads and preprocesses healthcare survey data (`cspuf2022.csv`)
+- Trains a Random Forest Regression model
+- Shows model performance and feature importance
+- Allows users to input patient information to predict healthcare costs
 
-- 🧠 AI Model: Uses a trained Random Forest Regressor for accurate cost prediction.
-- 📊 Feature Importance: See which factors most influence healthcare costs.
-- 🧾 User Inputs: Enter patient information like age, sex, race, income, and chronic conditions.
-- 📈 Live Prediction: Instantly receive a cost estimate on the screen.
-- 💡 Explanations: Friendly descriptions of what each category means.
+## 🧠 How It Works
 
-📂 Dataset
+1. **Data Preprocessing**:
+   - Handles missing values
+   - Encodes categorical variables (sex, race, income)
+   - Scales numeric data (age, chronic conditions)
 
-The model uses data from cspuf2022.csv, which must be placed in the data/ folder:
+2. **Model Training**:
+   - Splits the data into training and test sets
+   - Trains a `RandomForestRegressor`
+   - Evaluates model performance (R² score)
 
-project/
-│
+3. **Prediction**:
+   - Accepts user input from the sidebar
+   - Transforms and scales input
+   - Displays a predicted yearly healthcare cost
+
+## 📁 File Structure
+
+```
+.
+├── main.py                # Streamlit app script
 ├── data/
-│   └── cspuf2022.csv
-├── app.py
-└── README.txt
+│   └── cspuf2022.csv     # Dataset file (must be placed here)
+└── README.md             # Project documentation
+```
 
-📦 Installation
+## ⚙️ Requirements
 
-1. Clone the repository:
+Install the following Python packages:
 
-git clone https://github.com/your-username/healthcost-ai-predictor.git
-cd healthcost-ai-predictor
-
-2. Install dependencies:
-
-We recommend using a virtual environment.
-
-pip install -r requirements.txt
-
-Or manually install the essentials:
-
+```bash
 pip install streamlit pandas numpy scikit-learn matplotlib seaborn
+```
 
-▶️ Run the App
+## 🚀 Running the App
 
-streamlit run app.py
+Make sure your dataset `cspuf2022.csv` is inside a `data` folder, then run:
 
-It will open automatically in your browser. If not, check the terminal for a link (usually http://localhost:8501).
+```bash
+streamlit run main.py
+```
 
-🧪 How It Works
+## 📌 Notes
 
-1. Data Loading: Reads and processes the healthcare dataset.
-2. Preprocessing: Cleans numeric and categorical data, handles missing values, and scales features.
-3. Model Training: Trains a Random Forest model on the selected features.
-4. Prediction: Takes your inputs from the sidebar and shows a personalized cost prediction.
-5. Insights: Visualizes which input features were most important in making the prediction.
+- The dataset used is from the Medical Expenditure Panel Survey (MEPS) 2022.
+- Chronic conditions are categorized from **1 (Low)** to **5 (High)**.
+- All inputs are based on predefined categories for age, sex, race, income, and chronic conditions.
 
-🛠️ Tech Stack
+## 📷 Example Output
 
-- Python
-- Streamlit – for interactive UI
-- Pandas & NumPy – for data processing
-- scikit-learn – for machine learning
-- Matplotlib & Seaborn – for plots
+- Feature importance graph
+- Predicted yearly healthcare cost
+- Explanation of the selected patient profile
 
-🧑‍💻 Example Inputs
+## 📬 Contact
 
-- Age Group: Young (0–24), Adult (25–64), Senior (65+)
-- Sex: Male or Female
-- Race: Includes White, Black, Asian, etc.
-- Income Level: From Poor to High Income
-- Chronic Conditions: Scale from 1 (few) to 5 (many)
-
-⚠️ Note
-
-Make sure your cspuf2022.csv file exists and is properly formatted. If not, the app will display an error message.
-
-📜 License
-
-This project is for educational and research use only. No real-world medical decisions should be made using this app.
+For questions or improvements, feel free to reach out or fork this project.
