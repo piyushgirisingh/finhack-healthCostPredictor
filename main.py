@@ -20,7 +20,7 @@ df = pd.read_csv('data/cspuf2022.csv', low_memory=False)
 X = df[['CSP_AGE', 'CSP_SEX', 'CSP_RACE', 'CSP_INCOME', 'CSP_NCHRNCND']]
 y = df['PAMTTOT']
 
-# data cleaning 
+# data cleaning for inputs
 X = X.apply(pd.to_numeric, errors='coerce')
 X = X.fillna(X.median())
 y = pd.to_numeric(y, errors='coerce').fillna(y.median())
