@@ -69,4 +69,8 @@ streamlit run main.py
 
 For questions or improvements, feel free to reach out or fork this project!
 
+Here is the url for the deployed app: https://finhack-healthcostpredictor-dyr8cpvb3p2hwu4r5v29bo.streamlit.app/
+
+
+
 
