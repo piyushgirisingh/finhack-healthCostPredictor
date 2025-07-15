@@ -67,4 +67,6 @@ streamlit run main.py
 
 ## 📬 Contact
 
-For questions or improvements, feel free to reach out or fork this project.
+For questions or improvements, feel free to reach out or fork this project!
+
+
